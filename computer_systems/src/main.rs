@@ -1,4 +1,5 @@
 use::computer_systems::protobuf_varint;
+use::computer_systems::hex_to_rgb;
 use::std::fs::File;
 
 fn main() {
@@ -6,5 +7,13 @@ fn main() {
 
     let encoded_number = protobuf_varint::encode(file);
 
-    protobuf_varint::decode(encoded_number);
+    let decoded_number = protobuf_varint::decode(encoded_number);
+
+    println!("decoded number: {:?}", decoded_number);
+
+    let file = File::open("color-convert/simple.css").expect("file not found");
+
+    let result = hex_to_rgb::hex_to_rgb(file);
+
+    println!("result: {:?}", result);
 }

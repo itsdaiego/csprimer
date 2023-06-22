@@ -26,8 +26,6 @@ pub fn encode(file: File) -> Vec<u8> {
         }
     }
 
-    println!("bytes: {:x?}", bytes);
-
     return bytes
 }
 
@@ -35,17 +33,11 @@ pub fn encode(file: File) -> Vec<u8> {
 pub fn decode(encoded_varint: Vec<u8>) -> u64 {
     let mut number = 0;
 
-    println!("encoded varint: {:x?}", encoded_varint);
-
     for byte in encoded_varint.iter().rev() {
         number <<= 7;
 
         number |=  (byte & 0x7f) as u64;
-
-        println!("decoded number: {:?}", number);
     }
-
-    println!("decoded number: {:?}", number);
 
     return number
 }
