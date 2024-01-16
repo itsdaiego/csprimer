@@ -2,7 +2,8 @@
 // use::computer_systems::hex_to_rgb;
 // use::computer_systems::beep_boop;
 // use::computer_systems::image_blackout;
-use::computer_systems::syn_flood;
+// use::computer_systems::syn_flood;
+use::computer_systems::utf8_truncate;
 use::std::fs::File;
 
 fn main() {
@@ -26,7 +27,11 @@ fn main() {
 
     // beep_boop::beep_boop();
     
-    let file = File::open("syn-flood/synflood.pcap").expect("file not found");
+    // let file = File::open("syn-flood/synflood.pcap").expect("file not found");
 
-    syn_flood::detect_flood(&file);
+    // syn_flood::detect_flood(&file);
+
+    let file = File::open("utf8-truncate/cases").expect("file not found");
+
+    utf8_truncate::utf8_truncate(&file);
 }
