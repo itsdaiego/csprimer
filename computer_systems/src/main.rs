@@ -3,8 +3,10 @@
 // use::computer_systems::beep_boop;
 // use::computer_systems::image_blackout;
 // use::computer_systems::syn_flood;
-use::computer_systems::utf8_truncate;
-use::std::fs::File;
+// use::computer_systems::utf8_truncate;
+// use::std::fs::File;
+
+use::computer_systems::bitcount;
 
 fn main() {
     // let file = File::open("varint/150.uint64").expect("file not found");
@@ -31,7 +33,12 @@ fn main() {
 
     // syn_flood::detect_flood(&file);
 
-    let file = File::open("utf8-truncate/cases").expect("file not found");
+    // let file = File::open("utf8-truncate/cases").expect("file not found");
 
-    utf8_truncate::utf8_truncate(&file);
+    // utf8_truncate::utf8_truncate(&file);
+    
+
+    println!("{:?}", bitcount::count_on_bits(1));
+    println!("{:?}", bitcount::count_on_bits(3));
+    println!("{:?}", bitcount::count_on_bits(23));
 }
