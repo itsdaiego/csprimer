@@ -26,7 +26,7 @@ pub fn encode(file: File) -> Vec<u8> {
         }
     }
 
-    return bytes
+    bytes
 }
 
 
@@ -39,5 +39,5 @@ pub fn decode(encoded_varint: Vec<u8>) -> u64 {
         number |=  (byte & 0x7f) as u64;
     }
 
-    return number
+    number
 }
