@@ -1,3 +1,4 @@
-networking/target/
-computer_systems/target/
 .DS_Store
+**/target/
+**/*.o
+
